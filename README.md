@@ -68,7 +68,7 @@ npm run dev
 To ensure optimal functionality of the application, create a `.env` file in the root of your repository and add the following variables:
 
 ```
-VITE_PUBLIC_DID=did:ion:EiCXbwh...JnIn19
+VITE_PUBLIC_DID=did:dht:zmuq5prbfsqe4tg5oqf6qprhnjkg7gg73jdfae8gznqn3rpoubho
 VITE_PROTOCOL_URL=http://localhost:5173/
 ```
 
