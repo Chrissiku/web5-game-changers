@@ -29,7 +29,7 @@ const ContextProvider = ({ children }) => {
       setUserType(storedUserType);
     }
     connectWeb5();
-  }, []);
+  }, [did]);
 
   const setUserTypeAndRedirect = (type) => {
     localStorage.setItem("userType", type);
@@ -77,32 +77,32 @@ const ContextProvider = ({ children }) => {
     structure: {
       users: {
         $actions: [
-          { who: "anyone", can: "write" },
-          { who: "anyone", can: "read" },
+          { who: "anyone", can: ["create", "read"] },
+          // { who: "anyone", can: "read" },
         ],
       },
       medicalRecords: {
         $actions: [
-          { who: "anyone", can: "write" },
-          { who: "recipient", of: "medicalRecords", can: "read" },
+          { who: "anyone", can: ["create"] },
+          { who: "recipient", of: "medicalRecords", can: ["read"] },
         ],
       },
       patientProfile: {
         $actions: [
-          { who: "anyone", can: "write" },
-          { who: "recipient", of: "patientProfile", can: "read" },
+          { who: "anyone", can: ["create"] },
+          { who: "recipient", of: "patientProfile", can: ["read"] },
         ],
       },
       doctorProfile: {
         $actions: [
-          { who: "anyone", can: "write" },
-          { who: "anyone", can: "read" },
+          { who: "anyone", can: ["create", "read"] },
+          // { who: "anyone", can: "read" },
         ],
       },
       bookAppointment: {
         $actions: [
-          { who: "anyone", can: "write" },
-          { who: "recipient", of: "bookAppointment", can: "read" },
+          { who: "anyone", can: ["create"] },
+          { who: "recipient", of: "bookAppointment", can: ["read"] },
         ],
       },
     },
